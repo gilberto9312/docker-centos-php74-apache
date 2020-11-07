@@ -8,7 +8,11 @@ RUN yum -y update &&\
     yum-config-manager --enable remi-php72 && \
     yum -y install php php-json php-pecl-apcu-bc php-process php-pdo php-intl php-cli php-pecl-apcu php-xml php-pgsql php-mysql php-mcrypt php-soap php-pear php-mbstring php-common php-devel php-opcache php-gd php-bcmath php-zip php-xdebug&& \
     yum install -y httpd && \
-    yum -y install vim git zip unzip
+    yum -y install vim git zip unzip && \
+    HASH="$(wget -q -O - https://composer.github.io/installer.sig)" && \
+    php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+    sudo php composer-setup.php --version=1.1.10 --install-dir=/usr/local/bin --filename=composer
+
 
 #digest
 RUN mkdir /etc/usuario_digest && \ 
