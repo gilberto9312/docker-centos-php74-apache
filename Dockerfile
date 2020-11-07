@@ -29,3 +29,4 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #arrancamos apache
 CMD ["/run-httpd.sh"]
 EXPOSE 80
+EXPOSE 8000
