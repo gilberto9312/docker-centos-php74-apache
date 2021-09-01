@@ -6,7 +6,7 @@ RUN yum -y update &&\
     yum -y install epel-release yum-utils && \
     yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && \
     yum-config-manager --enable remi-php73 && \
-    yum -y install php php-json php-pecl-apcu-bc php-process php-pdo php-intl php-cli php-pecl-apcu php-xml php-pgsql php-mysql php-mcrypt php-soap php-pear php-mbstring php-common php-devel php-opcache php-gd php-bcmath php-zip php-xdebug&& \
+    yum -y install php php-json php-pecl-apcu-bc php-process php-pdo php-intl php-cli php-pecl-apcu php-xml php-pgsql php-mysql php-mcrypt php-soap php-pear php-mbstring php-common php-devel php-opcache php-gd php-bcmath php-zip php-xdebug php-pecl-redis && \
     yum install -y httpd && \
     yum -y install vim git zip unzip
 
